@@ -103,14 +103,34 @@
 						<@liferay.language key="powered-by" />
 						-->
 						
-						<div class="footer-navigation">
-							<#-- add portlets to theme, list of liferay portlet keys https://portal.liferay.dev/docs/7-2/reference/-/knowledge_base/r/fully-qualified-portlet-ids -->
-							<#assign preferences = freeMarkerPortletPreferences.getPreferences(
-							  "portletSetupPortletDecoratorId", "barebone"
-							) />
-							<@liferay_portlet["runtime"]
-								defaultPreferences="${preferences}"
-							    portletName="com_liferay_site_navigation_menu_web_portlet_SiteNavigationMenuPortlet"
+						<div class="footer-navigation">					        
+					        <#assign secondaryNavigationPreferencesMap = 
+							  {
+							    "displayStyle": "ddmTemplate_NAVBAR-BLANK-JUSTIFIED-FTL", 
+							    "portletSetupPortletDecoratorId": "barebone", 
+							    "siteNavigationMenuId": "36606", 
+							    "siteNavigationMenuType": "-1",
+							    "rootLayoutType": "relative",
+							    "rootMenuItemType": "absolute"
+							  } 
+							    
+							    <#--
+							    _com_liferay_portlet_configuration_web_portlet_PortletConfigurationPortlet_preferences--siteNavigationMenuId--: 36606
+								_com_liferay_portlet_configuration_web_portlet_PortletConfigurationPortlet_preferences--siteNavigationMenuType--: -1
+								_com_liferay_portlet_configuration_web_portlet_PortletConfigurationPortlet_selectNavigation: -1
+								_com_liferay_portlet_configuration_web_portlet_PortletConfigurationPortlet_preferences--displayStyleGroupId--: 20124
+								_com_liferay_portlet_configuration_web_portlet_PortletConfigurationPortlet_preferences--displayStyle--: ddmTemplate_NAVBAR-BLANK-FTL
+								_com_liferay_portlet_configuration_web_portlet_PortletConfigurationPortlet_preferences--rootMenuItemType--: absolute
+								_com_liferay_portlet_configuration_web_portlet_PortletConfigurationPortlet_preferences--rootMenuItemLevel--: 0
+								_com_liferay_portlet_configuration_web_portlet_PortletConfigurationPortlet_preferences--rootMenuItemId--: 0
+								_com_liferay_portlet_configuration_web_portlet_PortletConfigurationPortlet_preferences--displayDepth--: 0
+								_com_liferay_portlet_configuration_web_portlet_PortletConfigurationPortlet_preferences--expandedLevels--: auto
+								-->
+							/>
+							
+							<@liferay.navigation_menu
+							  default_preferences=freeMarkerPortletPreferences.getPreferences(secondaryNavigationPreferencesMap)
+							  instance_id="main_navigation_menu"
 							/>
 						</div>
 					</div>
