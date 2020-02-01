@@ -4,6 +4,18 @@
 	</button>
 
 	<div aria-expanded="false" class="collapse navbar-collapse" id="navigationCollapse">
-		<@liferay.navigation_menu default_preferences="${preferences}" />
+	
+		<#assign primaryNavigationPreferencesMap = 
+		  {
+		    "displayStyle": "ddmTemplate_NAVBAR-BLANK-JUSTIFIED-FTL",
+		    "siteNavigationMenuId": "0", 
+		    "siteNavigationMenuType": "-1",
+		    "rootLayoutType": "relative",
+		    "rootMenuItemType": "absolute",
+		    "rootMenuItemLevel": "0"
+		  } 
+		/>
+	
+		<@liferay.navigation_menu default_preferences=freeMarkerPortletPreferences.getPreferences(primaryNavigationPreferencesMap) />
 	</div>
 </#if>
