@@ -115,14 +115,38 @@ body {
 	}
 	
 	.footer-navigation {
-		a {
-			color: #fff;
+		li {
+			&:not(:first-of-type):after {
+				content: "";
+				width: 1px;
+				background: #fff;
+				height: 18px;
+				position: absolute;
+				display: block;
+				top: 15px;
+			}
+			
+			a {
+				color: #fff;
+ 				margin-left: 5px;
+ 				margin-right: 4px;
+			}
+			
+			&:first-of-type a {
+ 				margin-left: 0;
+			}
 		}
 	}
 	
 	.social-icons {
-		justify-content: space-between;
     	display: flex;
+	
+		@include media-breakpoint-up(sm) {
+			justify-content: space-between;
+		}
+		@include media-breakpoint-down(sm) {
+			justify-content: start;
+		}
     	
     	a {
 	    	margin: 10px 5px;

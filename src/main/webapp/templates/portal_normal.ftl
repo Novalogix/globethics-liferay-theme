@@ -98,7 +98,7 @@
 		<footer id="footer" role="contentinfo">
 			<div class="container">
 				<div class="row">
-					<div class="col-md-8 text-center text-md-left">
+					<div class="col text-center text-md-left">
 						<#-- example of translation in theme
 						<@liferay.language key="powered-by" />
 						-->
@@ -136,7 +136,7 @@
 					</div>
 					
 					
-					<div class="col-md-4 text-center text-md-right social-icons">
+					<div class="col-md-4 col-lg-3 text-center text-md-right social-icons">
 						<a target="_blank" href="http://www.twitter.com/Globethicsnet" class="social-twitter"></a>
 						<a target="_blank" href="http://www.facebook.com/pages/Globethicsnet/136514836382848" class="social-facebook"></a>
 						<a target="_blank" href="https://www.youtube.com/user/Globethics" class="social-youtube"></a>
